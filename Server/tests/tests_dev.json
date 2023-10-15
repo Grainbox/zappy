@@ -1,0 +1,30 @@
+{
+    "name": "IA tests cmds",
+    "reference_binary": "./tests/zappy_server",
+    "server_args": "",
+    "default_timeout": 1,
+
+    "tests": [
+        {
+            "name": "IA test connect_nbr",
+            "client": [
+                {
+                    "team": "Team1",
+                    "inputs": [
+                        "Left",
+                        "Connect_nbr",
+                        "Left"
+                    ]
+                },
+                {
+                    "team": "Team1",
+                    "inputs": [
+                        "Connect_nbr",
+                        "Left",
+                        "Connect_nbr"
+                    ]
+                }
+            ]
+        }
+    ]
+}

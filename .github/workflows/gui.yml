@@ -1,0 +1,33 @@
+name: GUI CI
+
+on:
+  push:
+    paths:
+      - 'GUI/**'
+  pull_request:
+    paths:
+      - 'GUI/**'
+  workflow_dispatch:
+
+jobs:
+  gui_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install gui requirements
+        run: |
+          sudo apt-get update
+          sudo apt-get install build-essential xorg-dev libgl1-mesa-dev libasound2-dev git cmake -y
+          git clone https://github.com/raysan5/raylib.git raylib
+          cd raylib
+          mkdir build && cd build
+          cmake ..
+          make
+          sudo make install
+
+      - name: Build GUI
+        run: |
+          cd GUI
+          make re

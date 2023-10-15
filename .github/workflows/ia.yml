@@ -1,0 +1,30 @@
+name: IA CI
+
+on:
+  push:
+    paths:
+      - 'IA/**'
+  pull_request:
+    paths:
+      - 'IA/**'
+  workflow_dispatch:
+
+jobs:
+  ia_build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install build essentials
+        run: sudo apt-get update && sudo apt-get install build-essential libsfml-dev -y
+
+      - name: Build IA
+        run: |
+          cd IA
+          make re
+
+      - name: Build IA
+        run: |
+          cd IA
+          make re

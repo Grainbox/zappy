@@ -1,0 +1,67 @@
+name: Server CI
+
+on:
+  push:
+    paths:
+      - 'Server/**'
+  pull_request:
+    paths:
+      - 'Server/**'
+  workflow_dispatch:
+
+jobs:
+  server_build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Server requirements
+        run: sudo apt-get update && sudo apt-get install build-essential -y
+
+      - name: Build Server
+        run: |
+          cd Server
+          make re && make clean && make fclean
+
+  server_test:
+    needs: server_build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install test requirements
+        run: sudo apt-get update && sudo apt-get install python3 docker.io python3-pip -y
+
+      - name: Run unit tests
+        run: |
+          cd Server
+          python3 run_tests.py --json_path tests/tests_ia.json --logs
+
+  server_coding_style:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install Docker
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y docker.io
+
+    - name: Install Curl
+      run: sudo apt-get install -y curl
+
+    - name: Download coding-style.sh
+      run: |
+        wget https://raw.githubusercontent.com/Epitech/coding-style-checker/main/coding-style.sh
+        chmod +x coding-style.sh
+
+    - name: Run coding-style.sh
+      run: |
+        ./coding-style.sh ./Server .
+    - name: Check coding style report
+      run: |
+        if grep -q " error:" ./coding-style-reports.log; then
+          echo "Coding style errors found"
+          exit 1
+        fi

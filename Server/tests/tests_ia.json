@@ -1,0 +1,172 @@
+{
+    "name": "IA tests cmds",
+    "reference_binary": "./tests/zappy_server",
+    "server_args": "",
+    "default_timeout": 1,
+
+    "tests": [
+        {
+            "name": "IA simple login",
+            "team": "Team1",
+            "inputs": [
+            ]
+        },
+        {
+            "name": "IA login Team2",
+            "team": "Team2",
+            "inputs": [
+            ]
+        },
+        {
+            "name": "IA login 2 clients Team1",
+            "client": [
+                {
+                    "team": "Team1",
+                    "inputs": [
+                    ]
+                },
+                {
+                    "team": "Team1",
+                    "inputs": [
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "IA cmd Right",
+            "team": "Team1",
+            "inputs": [
+                "Right"
+            ],
+            "ignore_failure": true
+        },
+        {
+            "name": "IA cmd Left",
+            "team": "Team1",
+            "inputs": [
+                "Left"
+            ],
+            "ignore_failure": true
+        },
+        {
+            "name": "IA cmd Forward",
+            "team": "Team1",
+            "inputs": [
+                "Forward"
+            ],
+            "ignore_failure": true
+        },
+        {
+            "name": "IA cmd Look",
+            "team": "Team1",
+            "inputs": [
+                "Look"
+            ],
+            "ignore_failure": true
+        },
+        {
+            "name": "IA cmd Inventory",
+            "team": "Team1",
+            "inputs": [
+                "Inventory"
+            ],
+            "ignore_failure": true
+        },
+        {
+            "name": "IA cmd Broadcast",
+            "team": "Team1",
+            "inputs": [
+                "Broadcast"
+            ],
+            "ignore_failure": true
+        },
+        {
+            "name": "IA cmd Connect_nbr",
+            "team": "Team1",
+            "inputs": [
+                "Connect_nbr"
+            ],
+            "ignore_failure": true
+        },
+        {
+            "name": "IA cmd Fork",
+            "team": "Team1",
+            "inputs": [
+                "Fork"
+            ],
+            "ignore_failure": true
+        },
+        {
+            "name": "IA cmd Eject",
+            "team": "Team1",
+            "inputs": [
+                "Eject"
+            ],
+            "ignore_failure": true
+        },
+        {
+            "name": "IA cmd Take",
+            "team": "Team1",
+            "inputs": [
+                "Take"
+            ],
+            "ignore_failure": true
+        },
+        {
+            "name": "IA cmd Set",
+            "team": "Team1",
+            "inputs": [
+                "Set"
+            ],
+            "ignore_failure": true
+        },
+        {
+            "name": "IA cmd Incantation",
+            "team": "Team1",
+            "inputs": [
+                "Incantation"
+            ],
+            "ignore_failure": true
+        },
+        {
+            "name": "IA cmd Eject",
+            "team": "Team1",
+            "inputs": [
+                "Eject"
+            ],
+            "ignore_failure": true
+        },
+        {
+            "name": "IA cmd Take",
+            "team": "Team1",
+            "inputs": [
+                "Take"
+            ],
+            "ignore_failure": true
+        },
+        {
+            "name": "IA cmd Set",
+            "team": "Team1",
+            "inputs": [
+                "Set"
+            ],
+            "ignore_failure": true
+        },
+        {
+            "name": "IA cmd Incantation",
+            "team": "Team1",
+            "inputs": [
+                "Incantation"
+            ],
+            "ignore_failure": true
+        },
+        {
+            "name": "IA cmd Fork",
+            "team": "Team1",
+            "inputs": [
+                "Fork"
+            ],
+            "ignore_failure": true
+        }
+    ]
+}

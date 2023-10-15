@@ -1,0 +1,12 @@
+# IDE
+.vscode
+
+# build
+*.o
+*.so
+*.save
+.DS_Store
+# bin
+zappy_server
+zappy_gui
+zappy_ai
